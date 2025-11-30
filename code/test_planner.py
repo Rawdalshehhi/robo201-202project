@@ -13,7 +13,7 @@ def _compute_path_length(path: list[Configuration]) -> float:
 
 def test_planner(planner: PathPlanner, 
                  scenario_name: str,
-                 visualize: bool = False) -> dict:
+                 visualize: bool = True) -> dict:
     """
     Polymorphic test function for path planning algorithms.
     Works with ANY PathPlanner subclass (RRT, PRM, etc.).
