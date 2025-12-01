@@ -1,8 +1,4 @@
 import matplotlib.pyplot as plt
-
-
-
-
 def plot_rrt_time():
     max_iters = [1000, 5000, 10000]
     avg_times = [

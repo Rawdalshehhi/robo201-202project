@@ -18,7 +18,7 @@ def project_3d_to_2d(x, y, z):
 def plot_planner_3d_portable(planner, title="3D RRT (Portable Visualization)"):
     fig, ax = plt.subplots(figsize=(8, 8))
 
-    # Draw 3D-like tree edges
+   
     for node in planner.nodes:
         parent = node.parent
         if parent is not None:
@@ -26,7 +26,7 @@ def plot_planner_3d_portable(planner, title="3D RRT (Portable Visualization)"):
             x2, y2 = project_3d_to_2d(node.x, node.y, node.z)
             ax.plot([x1, x2], [y1, y2], color="gray", alpha=0.4)
 
-    # Draw path
+   
     path = planner.get_path()
     if path:
         xs = []
@@ -37,7 +37,7 @@ def plot_planner_3d_portable(planner, title="3D RRT (Portable Visualization)"):
             ys.append(py)
         ax.plot(xs, ys, color="green", linewidth=3, label="Path")
 
-    # Draw start and goal
+    
     sx, sy = project_3d_to_2d(planner.start.x, planner.start.y, planner.start.z)
     gx, gy = project_3d_to_2d(planner.goal.x, planner.goal.y, planner.goal.z)
 

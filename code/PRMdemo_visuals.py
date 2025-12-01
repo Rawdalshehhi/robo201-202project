@@ -6,18 +6,18 @@ from .obstacles import CircularObstacle, RectangularObstacle, PolygonObstacle
 
 
 def make_clean_obstacles():
-    # A few small obstacles (much cleaner)
+    
     obs = []
 
-    # Circles
+    #
     obs.append(CircularObstacle((3, 3), 0.8))
     obs.append(CircularObstacle((7, 7), 1.0))
 
-    # Rectangles
+    
     obs.append(RectangularObstacle(5, 2, 1.5, 1))
     obs.append(RectangularObstacle(2, 7, 1, 1.5))
 
-    # Polygons
+   
     obs.append(PolygonObstacle([(6,3),(7,4),(6.5,5)]))
 
     return obs
@@ -31,7 +31,7 @@ def main():
     obstacles = make_clean_obstacles()
 
     
-    # PRM visualization
+    
     prm = PRMPlanner(start, goal, bounds,
                      num_samples=500,
                      k_neighbors=10)

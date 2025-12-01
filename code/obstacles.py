@@ -87,7 +87,7 @@ def generate_random_obstacles(
             y = random.uniform(ymin, ymax - height)
             obstacles.append(RectangularObstacle(x, y, width, height))
 
-        else:  # polygon
+        else:  
             cx = random.uniform(xmin + 1.0, xmax - 1.0)
             cy = random.uniform(ymin + 1.0, ymax - 1.0)
             num_vertices = random.randint(3, 6)

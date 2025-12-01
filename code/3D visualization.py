@@ -1,4 +1,4 @@
-from mpl_toolkits.mplot3d import Axes3D  # noqa: F401
+from mpl_toolkits.mplot3d import Axes3D  
 
 
 def plot_planner_3d(planner, title: str = "3D Path Planning"):
@@ -8,7 +8,7 @@ def plot_planner_3d(planner, title: str = "3D Path Planning"):
     fig = plt.figure(figsize=(8, 8))
     ax = fig.add_subplot(111, projection='3d')
 
-    # Tree edges
+    
     if hasattr(planner, "nodes"):
         for node in planner.nodes:
             parent = getattr(node, "parent", None)
@@ -21,7 +21,7 @@ def plot_planner_3d(planner, title: str = "3D Path Planning"):
                     alpha=0.3,
                 )
 
-    # Path
+   
     path = planner.get_path()
     if path:
         xs = [p.x for p in path]
@@ -29,7 +29,7 @@ def plot_planner_3d(planner, title: str = "3D Path Planning"):
         zs = [p.z for p in path]
         ax.plot(xs, ys, zs, color="green", linewidth=3, label="Path")
 
-    # Start & goal
+   
     if hasattr(planner.start, "z"):
         ax.scatter([planner.start.x], [planner.start.y], [planner.start.z],
                    color="g", s=40, label="Start")

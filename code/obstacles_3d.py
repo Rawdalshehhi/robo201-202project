@@ -1,7 +1,3 @@
-"""
-3D obstacles for BONUS 3D RRT extension.
-"""
-
 from abc import ABC, abstractmethod
 import math
 
@@ -9,7 +5,7 @@ import math
 class Obstacle3D(ABC):
     @abstractmethod
     def contains(self, x: float, y: float, z: float) -> bool:
-        """Return True if (x, y, z) lies inside obstacle."""
+        
         pass
 
 
@@ -26,7 +22,7 @@ class SphericalObstacle(Obstacle3D):
 
 
 class BoxObstacle(Obstacle3D):
-    """Axis-aligned 3D box."""
+    
 
     def __init__(self,
                  x: float, y: float, z: float,

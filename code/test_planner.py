@@ -34,7 +34,7 @@ def test_planner(planner: PathPlanner,
         from .visualize import plot_planner
         plot_planner(planner, title=scenario_name)
 
-    # 5. Return dictionary
+    
     return {
         'success': success,
         'path_length': path_length,
@@ -58,19 +58,18 @@ def main():
     print("Path Planning Assignment - ROBO 201/202")
     print("=" * 70)
     
-    # Workspace
+    
     start = Configuration(1.0, 1.0)
     goal = Configuration(9.0, 9.0)
     bounds = ((0.0, 10.0), (0.0, 10.0))
 
-    # Environment densities (0, 10, 100 obstacles)
     env_obstacles_list = [0, 10, 100]
 
     results: list[dict] = []
 
-    # ---- Example systematic testing (you can expand to 9+ combos) ----
+   
 
-    # RRT hyperparameters
+    
     rrt_step_sizes = [0.5, 1.0, 2.0]
     rrt_iterations = [1000, 5000, 10000]
 
@@ -91,7 +90,7 @@ def main():
                 results.append(res)
                 print(res)
 
-    # PRM hyperparameters
+    
     prm_samples = [1000, 5000, 10000]
     prm_k = [5, 10, 15]
 

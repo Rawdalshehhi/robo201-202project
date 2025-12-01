@@ -1,7 +1,3 @@
-"""
-3D RRT Planner (BONUS extension).
-"""
-
 import time
 import random
 import math
@@ -11,7 +7,7 @@ from .configuration_3d import Configuration3D
 
 
 class Node3D(Configuration3D):
-    """Node in 3D RRT tree with parent pointer."""
+    
 
     def __init__(self, x: float, y: float, z: float):
         super().__init__(x, y, z)
@@ -19,7 +15,7 @@ class Node3D(Configuration3D):
 
 
 class RRT3DPlanner(PathPlanner):
-    """3D RRT planner using 3D configurations and 3D obstacles."""
+   
 
     def __init__(
         self,
@@ -42,7 +38,7 @@ class RRT3DPlanner(PathPlanner):
         self._planning_time: float = 0.0
 
     def _sample_random_point(self) -> Node3D:
-        """Sample random 3D point with goal bias."""
+       
         if random.random() < 0.1:
             return Node3D(self.goal.x, self.goal.y, self.goal.z)
 
@@ -86,7 +82,7 @@ class RRT3DPlanner(PathPlanner):
         return new
 
     def _edge_collision_free(self, a: Node3D, b: Node3D) -> bool:
-        """Sample along segment a→b and test obs.contains(x, y, z)."""
+        
         import numpy as np
 
         if not self.obstacles:
@@ -112,7 +108,7 @@ class RRT3DPlanner(PathPlanner):
         return [Configuration3D(n.x, n.y, n.z) for n in path_nodes]
 
     def plan(self) -> bool:
-        """3D RRT main loop."""
+        
         start_time = time.perf_counter()
 
         self.nodes = [self.start_node]
